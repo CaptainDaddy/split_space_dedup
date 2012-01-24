@@ -1,0 +1,48 @@
+# Project: space time
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o ../lib/debug.o ../lib/JoshuaMath.o pixel_space.o data_manipulation.o noise_remover.o video_units.o $(RES)
+LINKOBJ  = main.o ../lib/debug.o ../lib/JoshuaMath.o pixel_space.o data_manipulation.o noise_remover.o video_units.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -L"C:/Joshua/lib"  
+INCS =  -I"C:/Dev-Cpp/include"  -I"C:/Joshua/lib"  -I"C:/Joshua/SpaceTime" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include"  -I"C:/Joshua/lib"  -I"C:/Joshua/SpaceTime" 
+BIN  = space_time.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before space_time.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "space_time.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+../lib/debug.o: ../lib/debug.cpp
+	$(CPP) -c ../lib/debug.cpp -o ../lib/debug.o $(CXXFLAGS)
+
+../lib/JoshuaMath.o: ../lib/JoshuaMath.cpp
+	$(CPP) -c ../lib/JoshuaMath.cpp -o ../lib/JoshuaMath.o $(CXXFLAGS)
+
+pixel_space.o: pixel_space.cpp
+	$(CPP) -c pixel_space.cpp -o pixel_space.o $(CXXFLAGS)
+
+data_manipulation.o: data_manipulation.cpp
+	$(CPP) -c data_manipulation.cpp -o data_manipulation.o $(CXXFLAGS)
+
+noise_remover.o: noise_remover.cpp
+	$(CPP) -c noise_remover.cpp -o noise_remover.o $(CXXFLAGS)
+
+video_units.o: video_units.cpp
+	$(CPP) -c video_units.cpp -o video_units.o $(CXXFLAGS)

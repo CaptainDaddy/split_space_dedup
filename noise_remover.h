@@ -1,0 +1,29 @@
+//noise removal.h
+//Joshua Suggs
+//January 2012
+#ifndef _NOISE_REMOVAL_H_
+#define _NOISE_REMOVAL_H_
+#include "count_data_structures.h"
+#include "video_units.h"
+#include "pixel_space.h"
+#include<stdio.h>
+#include<stdlib.h>
+using namespace std;
+
+class noise_remover{
+   public:
+      noise_remover();       
+      noise_remover(pixel_space);//write copy constructor in pixel_space
+      noise_remover(pixel_space,int);
+      void build_count_tree();
+      void set_replacements();
+      void smooth_the_field();
+      pixel_space * return_pixel_space();
+   private:
+      pixel_space * video_space;
+      count_tree_node_pointer root;
+     // count_tree_node_list_pointer start;
+      int tolerance;
+};
+
+#endif

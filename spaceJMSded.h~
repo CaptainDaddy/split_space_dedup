@@ -16,9 +16,8 @@ class pixel_space{
 		pixel_space(int ***);
 		pixel_space(int ***, char *);
 		int *** get_data();
+		int *** set_data();
 		char * prcessing_status();
-		void set_data(int ***);
-		void set_status(char * );
 		unsigned int color_width();
 		unsigned int color_mode();
 		unsigned int color_mean();		
