@@ -88,8 +88,8 @@ void noise_remover::set_replacements(){
       little_current=little_list;
       damn_index=0;
       while(little_current!=NULL){
-         this->replacement_array[this->replacement_table_size+damn_index].to_replace=little_current->element->data;
-         this->replacement_array[this->replacement_table_size+damn_index].replace_with=dom_cell;
+         this->replacement_array[table_size+damn_index].to_replace=little_current->element->data;
+         this->replacement_array[table_size+damn_index].replace_with=dom_cell;
          this->replacement_table_size++;
          little_current=little_current->next;
       }
@@ -108,13 +108,8 @@ void noise_remover::smooth_the_field(){
    free(dimensions_copy);
    for(x1=0;x1<length1;x1++)
       for(x2=0;x2<length2;x2++)
-         for(x3=0;x3<length3;x3++){
-            damn_index=0;
-            while(damn_index<this->replacement_table_size){
-               if(replacement[damn_index].to_replace == this->video_space->get_cell([x1][x2][x3]){
-                  set_data(replacement[damn_index].replace_with, {x1,x2,x3});
-                  break;
-            }
-         }
+         for(x3=0;x3<length3;x3++)
+            
+
 }
    

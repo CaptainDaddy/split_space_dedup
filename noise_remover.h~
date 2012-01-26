@@ -20,7 +20,6 @@ class noise_remover{
       void smooth_the_field();
       pixel_space * return_pixel_space();
    private:
-      int replacement_table_size;
       pixel_space * video_space;
       count_tree_node_pointer root;
       container_ctn_list_node_pointer start;

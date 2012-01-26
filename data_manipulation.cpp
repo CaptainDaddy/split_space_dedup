@@ -13,6 +13,15 @@ int *** new_3d_int_array(int X1,int X2,int X3){
          ret[a][b]=(int *)calloc(X3,sizeof(int));
    return ret;
 }
+rgb_cell *** new_3d_rgb_array(int X1,int X2,int X3){
+   int a,b;    
+   rgb_cell *** ret=(rgb_cell ***)calloc(X1, X2*X3*sizeof(rgb_cell));
+   for(a=0;a<X1;a++) ret[a]=(rgb_cell **)calloc(X2, X3*sizeof(rgb_cell));
+   for(a=0;a<X1;a++)
+      for(b=0;b<X2;b++)
+         ret[a][b]=(rgb_cell *)calloc(X3,sizeof(rgb_cell));
+   return ret;
+}
 int del_3d_array(int ***X, int X1, int X2, int X3){
     int a,b,c;
     if(X==NULL) return 0;

@@ -16,11 +16,11 @@
 class pixel_space{
 public:
     pixel_space();
-    pixel_space(rgb_cell ***,int *);
-    rgb_cell *** get_data();
+    pixel_space(int ***,int *);
+    int *** get_data();
     rgb_cell get_cell(int x1,int x2,int x3);
     int * get_dimensions();
-    int set_data(int rgb_cell, int *);
+    int set_data(int ***, int *);
 private:
     rgb_cell *** data_space;
     int * dimensions;
